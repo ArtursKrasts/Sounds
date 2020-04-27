@@ -19,12 +19,7 @@ public class PlaySound {
             stop();
         }
         player = MediaPlayer.create(this.context, sounds[nr - 1]);
-        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                play(nr);
-            }
-        });
+        player.setLooping(true);
         player.start();
         Log.d(TAG , "  play : Player started.");
     }
